@@ -17,15 +17,22 @@ class UsersController < ApplicationController
 
     render({ :template => "users/show.html.erb" })
   end
-
+#Assigment changes creating username and password 
   def create
     user = User.new
 
     user.username = params.fetch("input_username")
+    user.password = params.fetch("input_password")
+    user.password_confirmation = params.fetch("input_password_confirmation")
 
-    user.save
+#Making use of the if, else to display notice or alert when adding a new user 
+    save_status = user.save
+    if save_status == true
+    redirect_to("/users/#{user.username}", {:notice => "Welcome, " + user.username + "!" })
+    else 
+      redirect_to("/user_sign_up", {:alert => user.errors.full_messages.to_sentence })
+    end 
 
-    redirect_to("/users/#{user.username}")
   end
 
   def update
