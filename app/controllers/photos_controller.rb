@@ -1,8 +1,4 @@
 class PhotosController < ApplicationController
-  def record 
-  
-    redirect_to("/insert_photo_record")
-  end 
   
   def index
     @photos = Photo.all

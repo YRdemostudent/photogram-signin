@@ -40,7 +40,8 @@ Rails.application.routes.draw do
   get("/delete_photo/:the_photo_id", { :controller => "photos", :action => "destroy"})
 
   # Comment routes
-
+  #post("/insert_comment_record", { :controller => "comments", :action => "record_comment" })
+  
   # CREATE
   get("/insert_comment_record", { :controller => "comments", :action => "create" })
 
