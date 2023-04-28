@@ -1,4 +1,9 @@
 class PhotosController < ApplicationController
+  def record 
+  
+    redirect_to("/insert_photo_record")
+  end 
+  
   def index
     @photos = Photo.all
     render({ :template => "photos/all_photos.html.erb"})

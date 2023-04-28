@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   get("/delete_user/:the_user_id", {:controller => "users", :action => "destroy"})
 
   # Photo routes
-
+  post("/insert_photo_record", { :controller => "photos", :action => "record" })
+  
   # CREATE
   get("/insert_photo_record", { :controller => "photos", :action => "create" })
 
